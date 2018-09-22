@@ -1,0 +1,314 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Sriwijaya Air REST Web Services",
+      "version": "1.0.0",
+      "description": "Sriwijaya Air REST Web Services is a REST Style web service version  from Sriwijaya SOAP Web Services version 111.",
+      "contact": {
+        "name": "OpenAPI Collection Team",
+        "url": "https://github.com/OpenAPICollection",
+        "email": "main@example.com"
+      },
+      "license": {
+        "name": "OpenAPI Collection Team",
+        "url": "https://github.com/OpenAPICollection"
+      }
+    },
+    "servers": [
+      {
+        "url": "{scheme}://api.example.com/{basePath}",
+        "description": "Production Server",
+        "variables": {
+          "scheme": {
+            "description": "The API is accessible via https and http",
+            "enum": [
+              "https",
+              "http"
+            ],
+            "default": "https"
+          },
+          "basePath": {
+            "description": "Base path",
+            "enum": [
+              "v1.0"
+            ],
+            "default": "v1.0"
+          }
+        }
+      },
+      {
+        "url": "{scheme}://api-sandbox.example.com/{basePath}",
+        "description": "Sandbox Server",
+        "variables": {
+          "scheme": {
+            "description": "The API is accessible via https and http",
+            "enum": [
+              "https",
+              "http"
+            ],
+            "default": "https"
+          },
+          "basePath": {
+            "description": "Base path",
+            "enum": [
+              "v1.0"
+            ],
+            "default": "v1.0"
+          }
+        }
+      }
+    ],
+    "tags": [
+      {
+        "name": "BookingMgt",
+        "description": "Booking Management Features"
+      },
+      {
+        "name": "AccountMgt",
+        "description": "Account Management Features"
+      },
+      {
+        "name": "ReferenceData",
+        "description": "All about data references"
+      }
+    ],
+    "paths": {
+      "/BookMgt/WsSearchFlight": {
+        "post": {
+          "tags": [
+            "BookingMgt"
+          ],
+          "operationId": "bookMgt.WsSearchFlight",
+          "summary": "List available flight schedule based on search parameters.",
+          "responses": {
+            "200": {
+              "description": "Return",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "400": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "500": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            }
+          }
+        }
+      },
+      "/BookMgt/WsGeneratePNR": {
+        "post": {
+          "tags": [
+            "BookingMgt"
+          ],
+          "operationId": "bookMgt.WsGeneratePNR",
+          "summary": "Make a booking",
+          "responses": {
+            "200": {
+              "description": "Return",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "400": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "500": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            }
+          }
+        }
+      },
+      "/BookMgt/WsIssuing": {
+        "post": {
+          "tags": [
+            "BookingMgt"
+          ],
+          "operationId": "bookMgt.WsIssuing",
+          "summary": "Make a booking",
+          "responses": {
+            "200": {
+              "description": "Return",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "400": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "500": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            }
+          }
+        }
+      },
+      "/BookMgt/WsRetrievePNR": {
+        "post": {
+          "tags": [
+            "BookingMgt"
+          ],
+          "operationId": "bookMgt.WsRetrievePNR",
+          "summary": "Retrieve PNR information",
+          "responses": {
+            "200": {
+              "description": "Return",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "400": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "500": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            }
+          }
+        }
+      },
+      "/BookMgt/WsCancelPNR": {
+        "post": {
+          "tags": [
+            "BookingMgt"
+          ],
+          "operationId": "bookMgt.WsCancelPNR",
+          "summary": "Cancel active PNR",
+          "responses": {
+            "200": {
+              "description": "Return",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "400": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "500": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            }
+          }
+        }
+      },
+      "/AccountMgt/WsAccountStatement": {
+        "post": {
+          "tags": [
+            "AccountMgt"
+          ],
+          "operationId": "accountMgt.WsAccountStatement",
+          "summary": "Retrieve account statement information",
+          "responses": {
+            "200": {
+              "description": "Return",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "400": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "500": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            }
+          }
+        }
+      },
+      "/AccountMgt/WsCreditBalance": {
+        "post": {
+          "tags": [
+            "AccountMgt"
+          ],
+          "operationId": "accountMgt.WsCreditBalance",
+          "summary": "Retrieve credit balance information",
+          "responses": {
+            "200": {
+              "description": "Return",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "400": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "500": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            }
+          }
+        }
+      },
+      "/ReferenceData/WsRouteOperate": {
+        "post": {
+          "tags": [
+            "ReferenceData"
+          ],
+          "operationId": "referenceData.WsRouteOperate",
+          "summary": "Retrieve list of route operation",
+          "responses": {
+            "200": {
+              "description": "Return",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "400": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            },
+            "500": {
+              "description": "Return with error",
+              "content": {
+                "application/json": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {},
+    "externalDocs": {
+      "description": "Find out more about Sriwijaya Air REST Web Services",
+      "url": "https://github.com/OpenAPICollection/sriwijaya-ws-openapi"
+    }
+  }
