@@ -7,10 +7,15 @@
 
 ## Running example
 
+- Copy openapi spec to swagger location.
+```bash
+    $ cd <example sjopenapi111 swagger-ui path>
+    $ cp ../../../sjopenapi111/openapi.json openapi/
+```
+
 - Running `http-server`
 
 ```bash
-    $ cd <example sjopenapi111 swagger-ui path>
     $ http-server
     Starting up http-server, serving ./
     Available on:
