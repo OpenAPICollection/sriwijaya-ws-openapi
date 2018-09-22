@@ -397,6 +397,33 @@
           },
           "password": {
             "$ref": "#/components/schemas/fieldPassword"
+          },
+          "cityFrom": {
+            "$ref": "#/components/schemas/fieldCityFrom"
+          },
+          "cityTo": {
+            "$ref": "#/components/schemas/fieldCityTo"
+          },
+          "returnStatus": {
+            "$ref": "#/components/schemas/fieldReturnStatus"
+          },
+          "departDate": {
+            "$ref": "#/components/schemas/fieldDepartDate"
+          },
+          "returnDate": {
+            "$ref": "#/components/schemas/fieldReturnDate"
+          },
+          "promoCode": {
+            "$ref": "#/components/schemas/fieldPromoCode"
+          },
+          "adult": {
+            "$ref": "#/components/schemas/fieldAdult"
+          },
+          "child": {
+            "$ref": "#/components/schemas/fieldChild"
+          },
+          "infant": {
+            "$ref": "#/components/schemas/fieldInfant"
           }
         }
       },
@@ -413,6 +440,45 @@
           },
           "password": {
             "$ref": "#/components/schemas/fieldPassword"
+          },
+          "received": {
+            "$ref": "#/components/schemas/fieldReceived"
+          },
+          "receivedPhone": {
+            "$ref": "#/components/schemas/fieldReceivedPhone"
+          },
+          "email": {
+            "$ref": "#/components/schemas/fieldEmail"
+          },
+          "searchKey": {
+            "$ref": "#/components/schemas/fieldSearchKey"
+          },
+          "extraCoverAddOns": {
+            "$ref": "#/components/schemas/fieldExtraCoverAddOns"
+          },
+          "adultPaxNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObjectInputReqNames"
+            }
+          },
+          "childPaxNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObjectInputReqNames"
+            }
+          },
+          "infantPaxNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObjectInputReqArrayInf"
+            }
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObjectInputReqArrayKey"
+            }
           }
         }
       },
@@ -429,12 +495,34 @@
           },
           "password": {
             "$ref": "#/components/schemas/fieldPassword"
+          },
+          "bookingCode": {
+            "$ref": "#/components/schemas/fieldBookingCode"
           }
         }
       },
       "WsIssuingResp": {
         "type": "object",
         "description": "Issuging Active PNR Response (WsIssuingResponse)"
+      },
+      "WsRetrievePNRReq": {
+        "type": "object",
+        "description": "Retrieve PNR Request (WsRetrievePNRReq)",
+        "properties": {
+          "userName": {
+            "$ref": "#/components/schemas/fieldUserName"
+          },
+          "password": {
+            "$ref": "#/components/schemas/fieldPassword"
+          },
+          "bookingCode": {
+            "$ref": "#/components/schemas/fieldBookingCode"
+          }
+        }
+      },
+      "WsRetrievePNRResp": {
+        "type": "object",
+        "description": "Retrieve PNR Request (WsRetrievePNRResp)"
       },
       "WsCancelPNRReq": {
         "type": "object",
@@ -445,6 +533,9 @@
           },
           "password": {
             "$ref": "#/components/schemas/fieldPassword"
+          },
+          "bookingCode": {
+            "$ref": "#/components/schemas/fieldBookingCode"
           }
         }
       },
@@ -461,6 +552,16 @@
           },
           "password": {
             "$ref": "#/components/schemas/fieldPassword"
+          },
+          "periodeStart": {
+            "type": "string",
+            "description": "Periode Start (DD-Mmm-YY)",
+            "example": "01-Sep-18"
+          },
+          "periodeEnd": {
+            "type": "string",
+            "description": "Periode End (DD-Mmm-YY)",
+            "example": "02-Sep-18"
           }
         }
       },
@@ -500,6 +601,68 @@
         "type": "object",
         "description": "Route Operate Response (WsRouteOperateResponse)"
       },
+      "ObjectInputReqNames": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "$ref": "#/components/schemas/fieldFirstName"
+          },
+          "lastName": {
+            "$ref": "#/components/schemas/fieldLastName"
+          },
+          "suffix": {
+            "$ref": "#/components/schemas/fieldSuffix"
+          },
+          "doB": {
+            "$ref": "#/components/schemas/fieldDoB"
+          },
+          "idNo": {
+            "$ref": "#/components/schemas/fieldIdNo"
+          }
+        }
+      },
+      "ObjectInputReqArrayInf": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "$ref": "#/components/schemas/fieldFirstName"
+          },
+          "lastName": {
+            "$ref": "#/components/schemas/fieldLastName"
+          },
+          "suffix": {
+            "$ref": "#/components/schemas/fieldSuffix"
+          },
+          "doB": {
+            "$ref": "#/components/schemas/fieldDoB"
+          },
+          "adultRefference": {
+            "$ref": "#/components/schemas/fieldAdultRefference"
+          },
+          "idNo": {
+            "$ref": "#/components/schemas/fieldIdNo"
+          }
+        }
+      },
+      "ObjectInputReqArrayKey": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Selected Segment Class Key",
+            "example": "10962952:Y:S"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category",
+            "enum": [
+              "Departure",
+              "Return"
+            ],
+            "default": "Departure"
+          }
+        }
+      },
       "fieldUserName": {
         "type": "string",
         "description": "Sriwijaya Agent Username",
@@ -509,6 +672,124 @@
         "type": "string",
         "description": "Sriwijaya Agent Password",
         "example": "SRIWIJAYA_AGENT_PASSWORD"
+      },
+      "fieldBookingCode": {
+        "type": "string",
+        "description": "Booking Code/PNR Code",
+        "example": "ABMNYZ"
+      },
+      "fieldReturnStatus": {
+        "type": "string",
+        "description": "Return Status On Search Flight",
+        "enum": [
+          "NO",
+          "YES"
+        ],
+        "default": "YES"
+      },
+      "fieldCityFrom": {
+        "type": "string",
+        "description": "City Source Location",
+        "example": "CGK"
+      },
+      "fieldCityTo": {
+        "type": "string",
+        "description": "City Destination Location",
+        "example": "DPS"
+      },
+      "fieldDepartDate": {
+        "type": "string",
+        "description": "Departure Date (DD-Mmm-YY)",
+        "example": "01-Sep-18"
+      },
+      "fieldReturnDate": {
+        "type": "string",
+        "description": "Return Date (DD-Mmm-YY)",
+        "example": "05-Sep-18"
+      },
+      "fieldPromoCode": {
+        "type": "string",
+        "description": "Promotion Code",
+        "example": "XXX10"
+      },
+      "fieldAdult": {
+        "type": "integer",
+        "description": "Adult Pax Count",
+        "example": 1
+      },
+      "fieldChild": {
+        "type": "integer",
+        "description": "Child Pax Count",
+        "example": 1
+      },
+      "fieldInfant": {
+        "type": "integer",
+        "description": "Infant Pax Count",
+        "example": 1
+      },
+      "fieldReceived": {
+        "type": "string",
+        "description": "Contact Name",
+        "example": "ANGKASA SRIWIJAYA"
+      },
+      "fieldReceivedPhone": {
+        "type": "string",
+        "description": "Contact Phone Number",
+        "example": "08123321123"
+      },
+      "fieldEmail": {
+        "type": "string",
+        "description": "Contact Email",
+        "example": "angkasa.sriwijaya@gmail.com"
+      },
+      "fieldSearchKey": {
+        "type": "string",
+        "description": "Search Key Response from Search Flight",
+        "example": "050090414591759173467946474365644449444669467547"
+      },
+      "fieldExtraCoverAddOns": {
+        "type": "string",
+        "description": "Extra Cover Add Ons (STI, etc.)",
+        "enum": [
+          "NO",
+          "YES"
+        ],
+        "default": "NO"
+      },
+      "fieldFirstName": {
+        "type": "string",
+        "description": "First Name"
+      },
+      "fieldLastName": {
+        "type": "string",
+        "description": "Last Name"
+      },
+      "fieldSuffix": {
+        "type": "string",
+        "description": "Suffix Name",
+        "enum": [
+          "Mr",
+          "Mrs",
+          "Ms",
+          "Mstr",
+          "Miss"
+        ],
+        "default": "Mr"
+      },
+      "fieldDoB": {
+        "type": "string",
+        "description": "Date of Birth (YYYY-MM-DD)",
+        "example": "2009-09-09"
+      },
+      "fieldIdNo": {
+        "type": "string",
+        "description": "Pax Identification Number (Passport, SSN, Driver license, etc.)",
+        "example": "A-11223344"
+      },
+      "fieldAdultRefference": {
+        "type": "integer",
+        "description": "Adult Refference",
+        "example": 1
       }
     },
     "parameters": {}
