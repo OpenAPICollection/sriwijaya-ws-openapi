@@ -68,6 +68,12 @@ paths:
           description: Return with error
           content:
             application/json: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WsSearchFlightReq'
+        required: true
   /BookMgt/WsGeneratePNR:
     post:
       tags:
@@ -87,6 +93,12 @@ paths:
           description: Return with error
           content:
             application/json: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WsGeneratePNRReq'
+        required: true
   /BookMgt/WsIssuing:
     post:
       tags:
@@ -106,6 +118,12 @@ paths:
           description: Return with error
           content:
             application/json: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WsIssuingReq'
+        required: true
   /BookMgt/WsRetrievePNR:
     post:
       tags:
@@ -125,6 +143,12 @@ paths:
           description: Return with error
           content:
             application/json: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WsRetrievePNRReq'
+        required: true
   /BookMgt/WsCancelPNR:
     post:
       tags:
@@ -144,6 +168,12 @@ paths:
           description: Return with error
           content:
             application/json: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WsCancelPNRReq'
+        required: true
   /AccountMgt/WsAccountStatement:
     post:
       tags:
@@ -163,6 +193,12 @@ paths:
           description: Return with error
           content:
             application/json: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WsAccountStatementReq'
+        required: true
   /AccountMgt/WsCreditBalance:
     post:
       tags:
@@ -182,6 +218,12 @@ paths:
           description: Return with error
           content:
             application/json: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WsCreditBalanceReq'
+        required: true
   /ReferenceData/WsRouteOperate:
     post:
       tags:
@@ -201,7 +243,100 @@ paths:
           description: Return with error
           content:
             application/json: {}
-components: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WsRouteOperateReq'
+        required: true
+components:
+  schemas:
+    WsSearchFlightReq:
+      type: object
+      description: Search Flight Request (WsSearchFlightRequest)
+      properties:
+        userName:
+          $ref: '#/components/schemas/fieldUserName'
+        password:
+          $ref: '#/components/schemas/fieldPassword'
+    WsSearchFlightResp:
+      type: object
+      description: Search Flight Response (WsSearchFlightResponse)
+    WsGeneratePNRReq:
+      type: object
+      description: Generete PNR/Booking Flight Request (WsGeneratePNRRequest)
+      properties:
+        userName:
+          $ref: '#/components/schemas/fieldUserName'
+        password:
+          $ref: '#/components/schemas/fieldPassword'
+    WsGeneratePNRResp:
+      type: object
+      description: Generate PNR/Booking Flight Response (WsGeneratePNRResponse)
+    WsIssuingReq:
+      type: object
+      description: Issuing Active PNR Request (WsIssuingRequest)
+      properties:
+        userName:
+          $ref: '#/components/schemas/fieldUserName'
+        password:
+          $ref: '#/components/schemas/fieldPassword'
+    WsIssuingResp:
+      type: object
+      description: Issuging Active PNR Response (WsIssuingResponse)
+    WsCancelPNRReq:
+      type: object
+      description: Cancel Active PNR Request (WsCancelPNRRequest)
+      properties:
+        userName:
+          $ref: '#/components/schemas/fieldUserName'
+        password:
+          $ref: '#/components/schemas/fieldPassword'
+    WsCancelPNRResp:
+      type: object
+      description: Cancel Active PNR Response (WsCancelPNRResponse)
+    WsAccountStatementReq:
+      type: object
+      description: Account Statement Request (WsAccountStatementRequest)
+      properties:
+        userName:
+          $ref: '#/components/schemas/fieldUserName'
+        password:
+          $ref: '#/components/schemas/fieldPassword'
+    WsAccountStatementResp:
+      type: object
+      description: Account Statement Response (WsAccountStatementResponse)
+    WsCreditBalanceReq:
+      type: object
+      description: Credit Balance Request (WsCreditBalanceRequest)
+      properties:
+        userName:
+          $ref: '#/components/schemas/fieldUserName'
+        password:
+          $ref: '#/components/schemas/fieldPassword'
+    WsCreditBalanceResp:
+      type: object
+      description: Credit Balance Response (WsCreditBalanceResponse)
+    WsRouteOperateReq:
+      type: object
+      description: Route Operate Request (WsRouteOperateRequest)
+      properties:
+        userName:
+          $ref: '#/components/schemas/fieldUserName'
+        password:
+          $ref: '#/components/schemas/fieldPassword'
+    WsRouteOperateResp:
+      type: object
+      description: Route Operate Response (WsRouteOperateResponse)
+    fieldUserName:
+      type: string
+      description: Sriwijaya Agent Username
+      example: SRIWIJAYA_AGENT_USER_NAME
+    fieldPassword:
+      type: string
+      description: Sriwijaya Agent Password
+      example: SRIWIJAYA_AGENT_PASSWORD  
+  parameters: {}
 externalDocs:
   description: Find out more about Sriwijaya Air REST Web Services
   url: 'https://github.com/OpenAPICollection/sriwijaya-ws-openapi'
