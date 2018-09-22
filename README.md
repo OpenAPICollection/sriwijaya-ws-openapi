@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/OpenAPICollection/sriwijaya-ws-openapi">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/LOGO_SJ_VERTIKAL.png/320px-LOGO_SJ_VERTIKAL.png" alt="Sriwijaya Air REST Web Service OpenAPI Version" width=200>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/LOGO_SJ_VERTIKAL.png/320px-LOGO_SJ_VERTIKAL.png" alt="Sriwijaya Air REST Web Service OpenAPI Version" width=300>
   </a>
 
   <h3 align="center">UnOfficial Sriwijaya Air REST Web Service OpenAPI Version</h3>
@@ -16,6 +16,22 @@
     <a href="https://github.com/OpenAPICollection/sriwijaya-ws-openapi/issues">Report issues</a>
   </p>
 </p>
+
+### Repository Structure
+```
+.
+└── sriwijaya-ws-openapi
+    ├── LICENSE
+    ├── README.md
+    ├── examples
+    │   └── sjopenapi111
+    │       └── swagger-ui
+    │           └── index.html
+    └── sjopenapi111
+        ├── openapi.json
+        └── openapi.yaml
+
+```
 
 ### Credit
 - [OpenAPI v 3.0.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#specification)
