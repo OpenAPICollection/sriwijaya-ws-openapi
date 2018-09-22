@@ -17,7 +17,14 @@
   </p>
 </p>
 
-### Repository Structure
+
+#### Swagger UI
+
+<p align="center">
+  <img src="docs/sjopenapi111/images/swagger-ui-sjopenapi111.png"  width=750>
+</p>
+
+#### Repository Structure
 ```
 .
 └── sriwijaya-ws-openapi
@@ -33,6 +40,6 @@
 
 ```
 
-### Credit
+#### Credit
 - [OpenAPI v 3.0.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#specification)
 - [Swagger UI](https://github.com/swagger-api/swagger-ui)
