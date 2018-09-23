@@ -26,7 +26,7 @@
 
 ##### Example
 
-- [Swagger UI (sjopenapi111)](examples/sjopenapi111/swagger-ui/README.md)
+- [Swagger UI (sjopenapi111)](examples/sjopenapi111/swagger-ui/)
 
 ##### OpenAPI Specification
 
