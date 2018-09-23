@@ -24,6 +24,17 @@
   <img src="docs/sjopenapi111/images/swagger-ui-sjopenapi111.png"  width=750>
 </p>
 
+##### Example
+
+- [Swagger UI (sjopenapi111)](examples/sjopenapi111/swagger-ui/README.md)
+
+##### OpenAPI Specification
+
+- [OpenAPI YAML Version (sjopenapi111)](sjopenapi111/openapi.yaml)
+
+- [OpenAPI JSON Version (sjopenapi111)](sjopenapi111/openapi.json)
+
+
 #### Repository Structure
 ```
 .
