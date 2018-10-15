@@ -318,7 +318,14 @@
           "200": {
             "description": "Return",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {},
+                "examples": {
+                  "return":{
+                    "externalValue": "./samples/sample-WsGeneratePNRRes.json"
+                  }
+                }
+              }
             }
           },
           "400": {

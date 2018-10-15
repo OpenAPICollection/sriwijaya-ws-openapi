@@ -10,8 +10,8 @@
       "email": "main@example.com"
     },
     "license": {
-      "name": "OpenAPI Collection Team",
-      "url": "https://github.com/OpenAPICollection"
+      "name": "Apache License 2.0",
+      "url": "https://github.com/OpenAPICollection/sriwijaya-ws-openapi/blob/master/LICENSE"
     }
   },
   "servers": [

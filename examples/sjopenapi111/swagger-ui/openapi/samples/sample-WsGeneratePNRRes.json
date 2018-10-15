@@ -1,0 +1,43 @@
+{
+    "userName": "SRIWIJAYA_AGENT_USER_NAME_SAMPLES",
+    "password": "SRIWIJAYA_AGENT_PASSWORD_SAMPLES",
+    "received": "ANGKASA SRIWIJAYA",
+    "receivedPhone": "08123321123",
+    "email": "angkasa.sriwijaya@gmail.com",
+    "searchKey": "050090414591759173467946474365644449444669467547",
+    "extraCoverAddOns": "NO",
+    "adultPaxNames": [
+      {
+        "firstName": "string",
+        "lastName": "string",
+        "suffix": "Mr",
+        "doB": "2009-09-09",
+        "idNo": "A-11223344"
+      }
+    ],
+    "childPaxNames": [
+      {
+        "firstName": "string",
+        "lastName": "string",
+        "suffix": "Mr",
+        "doB": "2009-09-09",
+        "idNo": "A-11223344"
+      }
+    ],
+    "infantPaxNames": [
+      {
+        "firstName": "string",
+        "lastName": "string",
+        "suffix": "Mr",
+        "doB": "2009-09-09",
+        "adultRefference": 1,
+        "idNo": "A-11223344"
+      }
+    ],
+    "keys": [
+      {
+        "key": "10962952:Y:S",
+        "category": "Departure"
+      }
+    ]
+  }
